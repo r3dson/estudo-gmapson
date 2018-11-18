@@ -19,6 +19,7 @@
   "homepage": "https://github.com/r3dson/estudo-gmapson#readme",
   "devDependencies": {
     "gh-pages": "^2.0.1",
-    "parcel-bundler": "^1.10.3"
+    "parcel-bundler": "^1.10.3",
+    "sass": "^1.15.1"
   }
 }

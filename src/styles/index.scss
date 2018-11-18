@@ -1,0 +1,36 @@
+/* SETTINGS */
+@import "./sttings.font-family";
+@import "./settings.font-sizes";
+@import "./settings.colors";
+/* GENERIC */
+@import "./generic.universal";
+@import "./generic.fonts";
+/* ELEMENTS */
+@import "./elements.html";
+@import "./elements.a";
+@import "./elements.ul";
+
+ul li {
+  display: inline;
+}
+
+ul li a {
+  color: #fff;
+  padding: 15px;
+}
+
+#logo {
+  color: #298383;
+  background-color: #f3f1c7;
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 15px;
+  padding: 15px;
+  text-align: center;
+}
+
+header {
+  background-color: $header-color;
+  display: grid;
+  grid-template-columns: fit-content(20%) auto;
+}
