@@ -34,6 +34,7 @@ header {
   background-color: $header-color;
   display: grid;
   grid-template-columns: [logo-start] fit-content(20%) [nav-start] auto [nav-end];
+  align-items: center;
 }
 
 section#hero {
@@ -86,8 +87,9 @@ footer {
 #features {
   display: grid;
   grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(2, auto);
   grid-column-gap: 10px;
-  text-align: center;
+  grid-row-gap: 10px;
 }
 
 #features i {
