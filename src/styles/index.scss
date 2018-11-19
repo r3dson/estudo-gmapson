@@ -76,7 +76,7 @@ img {
 .main {
   display: grid;
   grid-area: right;
-  grid-template-rows: 51px fit-content(30%);
+  grid-template-rows: 51px fit-content(30%) 50%;
 }
 
 footer {
@@ -87,9 +87,8 @@ footer {
 #features {
   display: grid;
   grid-template-columns: repeat(5, auto);
-  grid-template-rows: repeat(2, auto);
   grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  text-align: center;
 }
 
 #features i {
@@ -97,6 +96,25 @@ footer {
 }
 
 ul#features li {
+  align-self: start;
   background-color: lightgray;
   padding: 1em;
+}
+
+ul#features li:nth-child(1) {
+  background-color: #1c9090;
+}
+ul#features li:nth-child(2) {
+  align-self: center;
+  background-color: #36adad;
+}
+ul#features li:nth-child(3) {
+  background-color: #1c9090;
+}
+ul#features li:nth-child(4) {
+  align-self: center;
+  background-color: #36adad;
+}
+ul#features li:nth-child(5) {
+  background-color: #1c9090;
 }
