@@ -7,6 +7,7 @@
 @import "./generic.fonts";
 /* ELEMENTS */
 @import "./elements.html";
+@import "./elements.body";
 @import "./elements.a";
 @import "./elements.ul";
 
@@ -32,5 +33,34 @@ ul li a {
 header {
   background-color: $header-color;
   display: grid;
-  grid-template-columns: fit-content(20%) auto;
+  grid-template-columns: [logo-start] fit-content(20%) [nav-start] auto [nav-end];
+}
+
+section#hero {
+  background-color: #36adad;
+  border-top: 5px solid #2ea0a0;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  padding: 2em;
+}
+
+#content h1 {
+  color: #fffbc5;
+  text-transform: uppercase;
+}
+
+#content p {
+  color: #fff;
+}
+
+img {
+  background-size: cover;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+#mountain {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
 }
