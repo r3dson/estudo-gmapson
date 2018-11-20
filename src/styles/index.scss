@@ -8,6 +8,7 @@
 /* ELEMENTS */
 @import "./elements.html";
 @import "./elements.body";
+@import "./elements.header";
 @import "./elements.a";
 @import "./elements.ul";
 
@@ -30,17 +31,11 @@ ul li a {
   text-align: center;
 }
 
-header {
-  background-color: $header-color;
-  display: grid;
-  grid-template-columns: [logo-start] fit-content(20%) [nav-start] auto [nav-end];
-  align-items: center;
-}
-
 section#hero {
   background-color: #36adad;
   border-top: 5px solid #2ea0a0;
   display: grid;
+  grid-area: hero;
   grid-template-columns: repeat(2, auto);
   padding: 2em;
 }
@@ -76,7 +71,12 @@ img {
 .main {
   display: grid;
   grid-area: right;
-  grid-template-rows: 51px fit-content(30%) 50%;
+  grid-template-rows: 51px fit-content(30%) 50% auto;
+  grid-template-areas:
+    "head"
+    "hero"
+    "invention"
+    "features";
 }
 
 footer {
@@ -86,6 +86,7 @@ footer {
 
 #features {
   display: grid;
+  grid-area: features;
   grid-template-columns: repeat(5, auto);
   grid-column-gap: 10px;
   text-align: center;
@@ -123,6 +124,7 @@ section#info {
   background-color: #f2f2f2;
   padding: 2em;
   display: grid;
+  grid-area: invention;
   grid-template-columns: 1.5fr 1fr;
   align-items: space-around;
 }
@@ -130,4 +132,73 @@ section#info {
 #mountain-vector {
   align-self: center;
   width: 200px;
+}
+
+@media screen and (max-width: 60em) {
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    grid-template-areas:
+      "head"
+      "hero"
+      "features"
+      "invention";
+  }
+
+  #features {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  ul#features li:nth-child(5) {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .main {
+    grid-template-rows: auto fit-content(30%) 40% auto;
+  }
+
+  header {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2 auto);
+  }
+
+  #logo {
+    margin-left: 0;
+  }
+
+  nav ul {
+    float: none;
+    width: 100%;
+  }
+
+  nav ul li a {
+    width: calc(25% - 35px);
+    display: inline-block;
+    font-size: 0.9em;
+  }
+
+  section#hero,
+  section#info {
+    grid-template-columns: auto;
+    text-align: center;
+  }
+
+  #mountain,
+  #mountain-vector {
+    margin-top: 20px;
+  }
+
+  #features {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(4, auto);
+  }
+
+  ul#features li:nth-child(1),
+  ul#features li:nth-child(2) {
+    grid-column: 1 / span 2;
+  }
 }

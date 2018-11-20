@@ -1,0 +1,7 @@
+header {
+  background-color: $header-color;
+  display: grid;
+  grid-area: head;
+  grid-template-columns: [logo-start] fit-content(20%) [nav-start] auto [nav-end];
+  align-items: center;
+}
